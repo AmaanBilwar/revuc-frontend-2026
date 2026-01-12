@@ -2,7 +2,7 @@ import SplitText from "@/app/effects/SplitText";
 
 export default function Sponsors() {
   return (
-    <div id="section2" className="section w-full h-screen relative overflow-hidden">
+    <div id="sponsors" className="section w-full h-screen relative overflow-hidden">
       {/* Content */}
       <div className="relative z-20 w-full h-full flex items-start justify-end pt-[10%] px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl mr-[10%]">

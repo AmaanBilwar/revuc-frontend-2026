@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function About() {
   return (
-    <div id="section2" className="section w-full h-screen relative overflow-hidden">
+    <div id="about" className="section w-full h-screen relative overflow-hidden">
       {/* Ground */}
       <div
         className="absolute bottom-0 left-0 right-0 h-[23%] bg-linear-to-b from-base-100 to-base-200 opacity-40"

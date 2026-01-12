@@ -3,6 +3,7 @@ import { IBM_Plex_Mono, Instrument_Sans } from "next/font/google";
 import { ThemeProvider } from "@/app/components/theme-provider";
 import ScrollSmootherWrapper from "@/app/components/ScrollSmoother";
 import "./globals.css";
+import { NavigationBar } from "@/app/components/NavigationBar";
 
 const instrumentSans = Instrument_Sans({
   subsets: ["latin"],
@@ -30,17 +31,24 @@ export default function RootLayout({
       <head>
         <link rel="preload" href="/website-background.webp" as="image" />
       </head>
-      <body
-        className={`${instrumentSans.className} ${ibmPlexMono.variable} antialiased`}
-        style={{
-          backgroundColor: "#f0f0f0",
-          backgroundImage: "url(/website-background.webp)",
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-          // backgroundPosition: 'center',
-          // backgroundAttachment: 'fixed',
-        }}
-      >
+      <body className={`${instrumentSans.className} ${ibmPlexMono.variable} antialiased`}>
+        <NavigationBar />
+        {/* Fixed background element for better performance */}
+        <div
+          className="fixed inset-0"
+          style={{
+            backgroundImage: "url(/website-background.webp)",
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "center",
+            willChange: "transform",
+            transform: "translateZ(0)",
+            backfaceVisibility: "hidden",
+            WebkitBackfaceVisibility: "hidden",
+            zIndex: -1,
+          }}
+          aria-hidden="true"
+        />
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
