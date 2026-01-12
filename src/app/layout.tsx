@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { IBM_Plex_Mono, Instrument_Sans } from "next/font/google";
-import { ThemeProvider } from "./components/theme-provider";
-import ScrollSmootherWrapper from "./components/ScrollSmoother";
+import { ThemeProvider } from "@/app/components/theme-provider";
+import ScrollSmootherWrapper from "@/app/components/ScrollSmoother";
 import "./globals.css";
 
 const instrumentSans = Instrument_Sans({
@@ -17,7 +17,7 @@ const ibmPlexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "RevolutionUC",
+  title: "RevolutionUC 2026",
 };
 
 export default function RootLayout({
@@ -33,10 +33,10 @@ export default function RootLayout({
       <body
         className={`${instrumentSans.className} ${ibmPlexMono.variable} antialiased`}
         style={{
-          backgroundColor: '#f0f0f0',
-          backgroundImage: 'url(/website-background.webp)',
-          backgroundSize: 'cover',
-          backgroundRepeat: 'no-repeat',
+          backgroundColor: "#f0f0f0",
+          backgroundImage: "url(/website-background.webp)",
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
           // backgroundPosition: 'center',
           // backgroundAttachment: 'fixed',
         }}

@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import Image from "next/image";
 import gsap from "gsap";
@@ -16,24 +16,24 @@ const GsapScrollTrigger = () => {
       const boxes = gsap.utils.toArray(scrollRef.current.children);
 
       boxes.forEach((box: any, index: number) => {
-        const direction = (index === 0 || index === 1 || index === 2 || index === 3) ? 1 : -1;
-        
+        const direction = index === 0 || index === 1 || index === 2 || index === 3 ? 1 : -1;
+
         gsap.to(box, {
           x: direction * 100 * (index + 3),
           scale: 1.5,
           scrollTrigger: {
             trigger: box,
-            start: "bottom bottom", 
-            end: "top 20%", 
-            scrub: true, 
-			      //markers: true,
+            start: "bottom bottom",
+            end: "top 20%",
+            scrub: true,
+            //markers: true,
           },
           //ease: "power2.out",
-		  //markers: true,
+          //markers: true,
         });
       });
     },
-    { scope: scrollRef }
+    { scope: scrollRef },
   );
 
   return (
@@ -86,12 +86,9 @@ const GsapScrollTrigger = () => {
         />
       </div>
 
-
-
-      
       <div className="h-[70vh] w-full relative flex justify-center overflow-hidden" ref={scrollRef}>
         <Image
-		      src="/cloud_final1.webp"
+          src="/cloud_final1.webp"
           alt="Cloud"
           width={800}
           height={450}
@@ -99,15 +96,15 @@ const GsapScrollTrigger = () => {
           className="scroll-box h-110 absolute top-0 left-[60%]"
         />
         <Image
-		      src="/cloud_final2.webp"
+          src="/cloud_final2.webp"
           alt="Cloud"
           width={800}
           height={450}
           loading="lazy"
           className="scroll-box h-100 absolute top-30 left-[50%]"
         />
-		    <Image
-		      src="/cloud_final1.webp"
+        <Image
+          src="/cloud_final1.webp"
           alt="Cloud"
           width={800}
           height={450}
@@ -115,23 +112,23 @@ const GsapScrollTrigger = () => {
           className="scroll-box h-100 absolute top-0 left-[40%]"
         />
         <Image
-		      src="/cloud_final5.webp"
+          src="/cloud_final5.webp"
           alt="Cloud"
           width={800}
           height={450}
           loading="lazy"
           className="scroll-box h-100 absolute top-0 left-[70%]"
         />
-		    <Image
-		      src="/cloud_final4.webp"
+        <Image
+          src="/cloud_final4.webp"
           alt="Cloud"
           width={800}
           height={450}
           loading="lazy"
           className="scroll-box h-150 absolute top-0 right-[50%]"
         />
-		    <Image
-		      src="/cloud_final1.webp"
+        <Image
+          src="/cloud_final1.webp"
           alt="Cloud"
           width={800}
           height={450}
