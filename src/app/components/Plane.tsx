@@ -17,6 +17,7 @@ const Plane = () => {
     const scene = new THREE.Scene();
     let plane: any;
     let mixer: any;
+    let hasFlownOut = false;
 
     const renderer = new THREE.WebGLRenderer({ alpha: true });
     renderer.setSize(window.innerWidth, window.innerHeight);
@@ -81,24 +82,31 @@ const Plane = () => {
       
       // Check if we've scrolled past the about section
       if (aboutRect.bottom < 50) {
-        // Fly out of screen (move far to the right and down)
-        gsap.to(plane.position, { 
-          x: 3, 
-          y: -2, 
-          z: 0, 
-          duration: 1.5, 
-          ease: 'power2.in',
-          overwrite: true
-        });
-        gsap.to(plane.rotation, { 
-          x: 0.5, 
-          y: 1, 
-          z: 0.3, 
-          duration: 1.5, 
-          ease: 'power2.in',
-          overwrite: true
-        });
+        if (!hasFlownOut) {
+          hasFlownOut = true;
+          // Fly out of screen (move far to the right and down)
+          gsap.to(plane.position, { 
+            x: 3, 
+            y: -2, 
+            z: 0, 
+            duration: 1.5, 
+            ease: 'power2.in',
+            overwrite: true
+          });
+          gsap.to(plane.rotation, { 
+            x: 0.5, 
+            y: 1, 
+            z: 0.3, 
+            duration: 1.5, 
+            ease: 'power2.in',
+            overwrite: true
+          });
+        }
         return;
+      }
+      
+      if (hasFlownOut && aboutRect.bottom >= 50) {
+        hasFlownOut = false;
       }
       
       let currentSection = '';
@@ -130,13 +138,13 @@ const Plane = () => {
           ...coords.position, 
           duration: 3, 
           ease: 'power1.out',
-          // overwrite: true
+          overwrite: true
         });
         gsap.to(plane.rotation, { 
           ...coords.rotation, 
           duration: 3, 
           ease: 'power1.out',
-          // overwrite: true
+          overwrite: true
         });
       }
     };
