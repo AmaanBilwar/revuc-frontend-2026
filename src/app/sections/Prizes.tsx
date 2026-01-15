@@ -6,7 +6,7 @@ export default function Prizes() {
       <div className="relative z-20 w-full h-full flex items-start justify-end pt-[10%] px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl mr-[10%]">
           <SplitText
-            text="PRizes"
+            text="Prizes"
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight"
             delay={50}
             duration={0.6}
