@@ -65,7 +65,7 @@ export function NavigationBar() {
                 </NavigationMenuLink>
               </NavigationMenuItem>
 
-              <NavigationMenuItem>
+              {/*<NavigationMenuItem>
                 <NavigationMenuLink asChild>
                   <a
                     href="#sponsors"
@@ -78,7 +78,7 @@ export function NavigationBar() {
                     [SPONSORS]
                   </a>
                 </NavigationMenuLink>
-              </NavigationMenuItem>
+              </NavigationMenuItem>*/}
               <NavigationMenuItem>
                 <NavigationMenuLink asChild>
                   <a
