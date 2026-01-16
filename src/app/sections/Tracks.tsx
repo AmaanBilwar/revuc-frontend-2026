@@ -39,46 +39,46 @@ export default function Tracks() {
       <Image
         src="/white-shirt.webp"
         alt=""
-        width={500}
-        height={500}
-        className="absolute top-[10%] right-[0%] rotate-20"
+        width={800}
+        height={800}
+        className="absolute top-[15%] right-[-5%] rotate-20"
         aria-hidden="true"
         data-speed="0.9"
       />
       <Image
         src="/sock.webp"
         alt=""
-        width={500}
-        height={500}
-        className="absolute top-[6%] right-[-8%] scale-x-[-1]"
+        width={700}
+        height={700}
+        className="absolute top-[15%] right-[-10%] scale-x-[-1]"
         aria-hidden="true"
         data-speed="1.1"
       />
       <Image
         src="/sock.webp"
         alt=""
-        width={500}
-        height={500}
-        className="absolute top-[15%] right-[-12%] scale-x-[-1]"
+        width={700}
+        height={700}
+        className="absolute top-[30%] right-[-15%] scale-x-[-1]"
         aria-hidden="true"
         data-speed="1.1"
       />
       <Image
-        src="/pants.webp"
+        src="/shirt.webp"
         alt=""
-        width={500}
-        height={500}
-        className="absolute bottom-[5%] left-[0%] rotate-10"
+        width={900}
+        height={900}
+        className="absolute bottom-[-30%] left-[-26%] rotate-[-20deg]"
         aria-hidden="true"
         data-speed="0.8"
       />
 
       <Image
-        src="/shirt.webp"
+        src="/pants.webp"
         alt=""
-        width={500}
-        height={500}
-        className="absolute bottom-[-5%] left-[-8%] rotate-[-15deg]"
+        width={700}
+        height={700}
+        className="absolute bottom-[-5%] left-[-10%] rotate-12"
         aria-hidden="true"
         data-speed="0.75"
       />
@@ -86,21 +86,11 @@ export default function Tracks() {
       <Image
         src="/fixed_boarding_pass.webp"
         alt=""
-        width={300}
-        height={300}
-        className="absolute bottom-[-4%] right-[10%] rotate-[-15deg]"
+        width={280}
+        height={280}
+        className="absolute bottom-[-7%] left-[16%] rotate-15"
         aria-hidden="true"
-        data-speed="0.8"
-      />
-
-      <Image
-        src="/fixed_boarding_pass.webp"
-        alt=""
-        width={300}
-        height={300}
-        className="absolute bottom-[0%] right-[9%] rotate-[-7deg]"
-        aria-hidden="true"
-        data-speed="0.8"
+        data-speed="0.9"
       />
 
       {/* Content */}
@@ -108,7 +98,7 @@ export default function Tracks() {
         <div className="mt-16 mb-16 overflow-visible">
           <SplitText
             text="Tracks"
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight overflow-visible"
+            className="text-[#151477] text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight overflow-visible"
             delay={50}
             duration={0.6}
             ease="power3.out"
@@ -122,21 +112,60 @@ export default function Tracks() {
         </div>
 
         {/* Track cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {trackData.map((track, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow duration-300 group"
-            >
-              <h3 className="text-2xl font-bold text-[#003D7A] mb-3 relative inline-block">
-                {track.title}
-                <span className="absolute bottom-0 left-0 w-0 h-1 bg-[#00D68F] transition-all duration-300 group-hover:w-full" />
-              </h3>
-              <p className="text-gray-700 text-base leading-relaxed">
-                {track.description}
-              </p>
-            </div>
-          ))}
+        <div className="space-y-6 max-w-7xl mx-auto">
+          {/* First row */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl">
+            {trackData.slice(0, 2).map((track, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow duration-300 group"
+              >
+                <h3 className="text-2xl font-bold text-[#151477] mb-3 relative inline-block">
+                  {track.title}
+                  <span className="absolute bottom-0 left-0 w-0 h-1 bg-[#19E363] transition-all duration-300 group-hover:w-full" />
+                </h3>
+                <p className="text-[#151477] text-base leading-relaxed">
+                  {track.description}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          {/* Second row */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            {trackData.slice(2, 4).map((track, index) => (
+              <div
+                key={index + 2}
+                className="bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow duration-300 group"
+              >
+                <h3 className="text-2xl font-bold text-[#151477] mb-3 relative inline-block">
+                  {track.title}
+                  <span className="absolute bottom-0 left-0 w-0 h-1 bg-[#19E363] transition-all duration-300 group-hover:w-full" />
+                </h3>
+                <p className="text-[#151477] text-base leading-relaxed">
+                  {track.description}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          {/* Third row */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl ml-auto">
+            {trackData.slice(4, 6).map((track, index) => (
+              <div
+                key={index + 4}
+                className="bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow duration-300 group"
+              >
+                <h3 className="text-2xl font-bold text-[#151477] mb-3 relative inline-block">
+                  {track.title}
+                  <span className="absolute bottom-0 left-0 w-0 h-1 bg-[#19E363] transition-all duration-300 group-hover:w-full" />
+                </h3>
+                <p className="text-[#151477] text-base leading-relaxed">
+                  {track.description}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
