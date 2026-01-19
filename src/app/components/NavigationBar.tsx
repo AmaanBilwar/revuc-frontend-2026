@@ -156,7 +156,7 @@ export function NavigationBar() {
               <NavigationMenuItem>
                 <NavigationMenuLink asChild>
                   <Button
-                    className="hover:bg-white text-white font-mono text-sm sm:text-base md:text-lg hover:text-black bg-[#151477] rounded-none"
+                    className="hover:bg-white hover:cursor-pointer text-white font-mono text-sm sm:text-base md:text-lg hover:text-black bg-[#151477] rounded-none"
                     onClick={() => scrollToSection("schedule")}
                   >
                     [SCHEDULE]
@@ -166,7 +166,7 @@ export function NavigationBar() {
               <NavigationMenuItem>
                 <NavigationMenuLink asChild>
                   <Button
-                    className="hover:bg-white font-mono text-sm sm:text-base md:text-lg hover:text-black bg-[#19e363] rounded-none"
+                    className="hover:bg-white font-mono hover:cursor-pointer text-sm sm:text-base md:text-lg hover:text-black bg-[#19e363] rounded-none"
                     onClick={() => scrollToSection("boarding-pass")}
                   >
                     [REGISTER]
