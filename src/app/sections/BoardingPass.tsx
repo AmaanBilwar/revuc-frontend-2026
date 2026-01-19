@@ -180,7 +180,7 @@ export default function BoardingPass() {
               >
                 <div className="relative w-full h-64 sm:h-80 md:h-96 transition-all duration-300 ease-out group-hover:scale-105 group-hover:cursor-pointer">
                   <Image
-                    src="/fixed_boarding_pass.webp"
+                    src="/boarding_pass.webp"
                     alt="RevolutionUC 2026 Boarding Pass - Click to Register"
                     fill
                     priority

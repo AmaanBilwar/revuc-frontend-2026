@@ -87,7 +87,7 @@ export default function Tracks() {
       />
 
       <Image
-        src="/fixed_boarding_pass.webp"
+        src="/boarding_pass.webp"
         alt=""
         width={280}
         height={280}
