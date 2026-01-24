@@ -2,7 +2,6 @@
 import { useState, useEffect, type FormEvent, type ChangeEvent } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import Image from "next/image";
-import SplitText from "@/app/effects/SplitText";
 import { authClient } from "@/lib/auth-client";
 import { InputField, SelectField, Checkbox, CheckboxGroup } from "@/components/ui";
 import {

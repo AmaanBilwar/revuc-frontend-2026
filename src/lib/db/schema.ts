@@ -1,10 +1,4 @@
-import {
-  pgTable,
-  text,
-  boolean,
-  timestamp,
-  index,
-} from "drizzle-orm/pg-core";
+import { pgTable, text, boolean, timestamp, index } from "drizzle-orm/pg-core";
 
 // Better-auth required tables
 export const user = pgTable("user", {
@@ -13,12 +7,8 @@ export const user = pgTable("user", {
   email: text("email").notNull().unique(),
   emailVerified: boolean("emailVerified").notNull(),
   image: text("image"),
-  createdAt: timestamp("createdAt", { withTimezone: true })
-    .notNull()
-    .defaultNow(),
-  updatedAt: timestamp("updatedAt", { withTimezone: true })
-    .notNull()
-    .defaultNow(),
+  createdAt: timestamp("createdAt", { withTimezone: true }).notNull().defaultNow(),
+  updatedAt: timestamp("updatedAt", { withTimezone: true }).notNull().defaultNow(),
 });
 
 export const session = pgTable(
@@ -27,9 +17,7 @@ export const session = pgTable(
     id: text("id").primaryKey(),
     expiresAt: timestamp("expiresAt", { withTimezone: true }).notNull(),
     token: text("token").notNull().unique(),
-    createdAt: timestamp("createdAt", { withTimezone: true })
-      .notNull()
-      .defaultNow(),
+    createdAt: timestamp("createdAt", { withTimezone: true }).notNull().defaultNow(),
     updatedAt: timestamp("updatedAt", { withTimezone: true }).notNull(),
     ipAddress: text("ipAddress"),
     userAgent: text("userAgent"),
@@ -60,9 +48,7 @@ export const account = pgTable(
     }),
     scope: text("scope"),
     password: text("password"),
-    createdAt: timestamp("createdAt", { withTimezone: true })
-      .notNull()
-      .defaultNow(),
+    createdAt: timestamp("createdAt", { withTimezone: true }).notNull().defaultNow(),
     updatedAt: timestamp("updatedAt", { withTimezone: true }).notNull(),
   },
   (table) => [index("account_userId_idx").on(table.userId)],
@@ -75,12 +61,8 @@ export const verification = pgTable(
     identifier: text("identifier").notNull(),
     value: text("value").notNull(),
     expiresAt: timestamp("expiresAt", { withTimezone: true }).notNull(),
-    createdAt: timestamp("createdAt", { withTimezone: true })
-      .notNull()
-      .defaultNow(),
-    updatedAt: timestamp("updatedAt", { withTimezone: true })
-      .notNull()
-      .defaultNow(),
+    createdAt: timestamp("createdAt", { withTimezone: true }).notNull().defaultNow(),
+    updatedAt: timestamp("updatedAt", { withTimezone: true }).notNull().defaultNow(),
   },
   (table) => [index("verification_identifier_idx").on(table.identifier)],
 );
