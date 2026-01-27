@@ -3,6 +3,7 @@
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import gsap from "gsap";
 import Image from "next/image";
+import AnimatedPlane from "../components/AnimatedPlane";
 
 gsap.registerPlugin(ScrollToPlugin);
 
@@ -15,19 +16,7 @@ export default function HeroSection() {
 
 
       {/* Plane */}
-      <div className="absolute inset-0 overflow-y-visible pointer-events-none">
-        <div
-          className="absolute top-[15%] right-[0%] w-200 h-80"
-          data-speed="0.9"
-        >
-          <Image
-            src="/plane.webp"
-            alt=""
-            fill
-            className="object-contain"
-          />
-        </div>
-      </div>
+      <AnimatedPlane />
 
       {/* Clouds */}
       <div className="absolute inset-0 overflow-y-visible pointer-events-none">
@@ -68,7 +57,7 @@ export default function HeroSection() {
         </div>
 
         <div
-          className="absolute top-[-5%] left-[70%] w-[200px] h-72 opacity-60"
+          className="absolute top-[-2%] left-[60%] w-[200px] h-72 opacity-60"
           data-speed="1"
         >
           <Image
@@ -80,7 +69,7 @@ export default function HeroSection() {
         </div>
 
         <div
-          className="absolute top-[5%] left-[75%] w-[300px] h-72 opacity-60"
+          className="absolute top-[7%] left-[70%] w-[250px] h-72 opacity-50"
           data-speed="1"
         >
           <Image
@@ -128,7 +117,7 @@ export default function HeroSection() {
         </div>
 
         <div
-          className="absolute bottom-[-3%] left-[15%] w-[300px] h-90 opacity-80"
+          className="absolute bottom-[-3%] left-[15%] w-[300px] h-90 opacity-60"
           data-speed="0.9"
         >
           <Image
@@ -140,7 +129,7 @@ export default function HeroSection() {
         </div>
 
         <div
-          className="absolute bottom-[-3%] right-[5%] w-[500px] h-90 opacity-80"
+          className="absolute bottom-[-4%] right-[5%] w-[550px] h-90 opacity-60"
           data-speed="0.8"
         >
           <Image
@@ -166,7 +155,7 @@ export default function HeroSection() {
       </div>
 
       {/* Content */}
-      <div className="w-full max-w-6xl mx-auto relative z-10 pointer-events-none pt-25">
+      <div className="w-full max-w-6xl mx-auto relative z-10 pointer-events-none pt-25 z-40">
         <div className="max-w-2xl">
           <h1 className="underline  text-[#151477] underline-offset-4 decoration-[#19E363] text-8xl font-semibold">
             Revolution UC
