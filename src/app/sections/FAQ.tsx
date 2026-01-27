@@ -127,9 +127,15 @@ const FAQS: {
     },
   ];
 
-const itemClass = "border-white/10 bg-[#151477]";
+const itemClass = "border-white/10";
 const triggerClass = "px-4 py-3 text-base font-medium text-white sm:px-6 sm:text-lg";
-const contentClass = "bg-[#228CF6] px-4 py-3 text-left text-sm text-blue-50 sm:px-6 sm:text-base";
+const contentClass = "px-4 py-3 text-left text-sm text-blue-50 sm:px-6 sm:text-base";
+
+// Pixelated dot texture style
+const pixelTextureStyle = {
+  background: `radial-gradient(circle at center, rgba(80, 180, 255, 0.5) 1px, transparent 1px)`,
+  backgroundSize: '10px 10px',
+};
 
 function FaqItem({
   id,
@@ -142,10 +148,18 @@ function FaqItem({
 }) {
   return (
     <AccordionItem value={id} className={itemClass}>
-      <AccordionTrigger className={triggerClass}>
-        <span className="flex-1 text-left">{question}</span>
-      </AccordionTrigger>
-      <AccordionContent className={contentClass}>{answer}</AccordionContent>
+      <div className="relative overflow-hidden bg-[#151477]">
+        {/* Pixelated texture for question */}
+        <div className="absolute inset-0 pointer-events-none" style={pixelTextureStyle} />
+        <AccordionTrigger className={`relative z-10 ${triggerClass}`}>
+          <span className="flex-1 text-left">{question}</span>
+        </AccordionTrigger>
+      </div>
+      <div className="relative overflow-hidden bg-[#228CF6]">
+        {/* Pixelated texture for answer */}
+        <div className="absolute inset-0 pointer-events-none" style={pixelTextureStyle} />
+        <AccordionContent className={`relative z-10 ${contentClass}`}>{answer}</AccordionContent>
+      </div>
     </AccordionItem>
   );
 }
@@ -154,17 +168,49 @@ export default function Faq() {
   return (
     <div id="faq" className="section w-full h-auto relative overflow-visible pb-[250px]">
       <div className="relative z-20 flex h-full w-full items-center justify-center px-4 sm:px-6 lg:px-8">
-        <div className="w-full max-w-5xl bg-linear-to-b from-[#228CF6] to-[#1656C1] px-4 py-8 shadow-[0_24px_80px_rgba(0,0,0,0.4)] sm:px-8 sm:py-10 lg:px-12 lg:py-12">
-          <p className="text-left text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-            Frequently asked questions
-          </p>
+        <div className="relative w-full max-w-5xl overflow-hidden px-4 py-8 shadow-[0_24px_80px_rgba(0,0,0,0.4)] sm:px-8 sm:py-10 lg:px-12 lg:py-12">
+          {/* Base gradient background */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#228CF6] to-[#1656C1]" />
 
-          <div className="mt-6 overflow-hidden border border-white/15 bg-white/5">
-            <Accordion type="single" collapsible>
-              {FAQS.map((faq) => (
-                <FaqItem key={faq.id} {...faq} />
-              ))}
-            </Accordion>
+          {/* Pixelated dot texture overlay */}
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              background: `
+                radial-gradient(circle at center, rgba(80, 180, 255, 0.5) 1.5px, transparent 1.5px)
+              `,
+              backgroundSize: '6px 6px',
+            }}
+          />
+          {/* Color variation gradient overlay */}
+          <div
+            className="absolute inset-0 pointer-events-none opacity-40"
+            style={{
+              background: `
+                linear-gradient(135deg, 
+                  rgba(180, 80, 255, 0.4) 0%, 
+                  rgba(30, 80, 200, 0.3) 25%, 
+                  rgba(0, 180, 255, 0.4) 50%, 
+                  rgba(120, 40, 200, 0.3) 75%, 
+                  rgba(0, 220, 255, 0.4) 100%
+                )
+              `,
+            }}
+          />
+
+          {/* Content */}
+          <div className="relative z-10">
+            <p className="text-left text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+              Frequently asked questions
+            </p>
+
+            <div className="mt-6 overflow-hidden border border-white/15 bg-white/5">
+              <Accordion type="single" collapsible>
+                {FAQS.map((faq) => (
+                  <FaqItem key={faq.id} {...faq} />
+                ))}
+              </Accordion>
+            </div>
           </div>
         </div>
       </div>
