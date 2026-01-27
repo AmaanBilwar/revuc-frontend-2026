@@ -148,7 +148,10 @@ function FaqItem({
 }) {
   return (
     <AccordionItem value={id} className={itemClass}>
-      <div className="relative overflow-hidden bg-[#151477]">
+      <div
+        className="relative overflow-hidden"
+        style={{ background: 'linear-gradient(to right, #151477 10%, #228CF6 50%, #151477 100%)' }}
+      >
         {/* Pixelated texture for question */}
         <div className="absolute inset-0 pointer-events-none" style={pixelTextureStyle} />
         <AccordionTrigger className={`relative z-10 ${triggerClass}`}>
@@ -175,27 +178,7 @@ export default function Faq() {
           {/* Pixelated dot texture overlay */}
           <div
             className="absolute inset-0 pointer-events-none"
-            style={{
-              background: `
-                radial-gradient(circle at center, rgba(80, 180, 255, 0.5) 1.5px, transparent 1.5px)
-              `,
-              backgroundSize: '6px 6px',
-            }}
-          />
-          {/* Color variation gradient overlay */}
-          <div
-            className="absolute inset-0 pointer-events-none opacity-40"
-            style={{
-              background: `
-                linear-gradient(135deg, 
-                  rgba(180, 80, 255, 0.4) 0%, 
-                  rgba(30, 80, 200, 0.3) 25%, 
-                  rgba(0, 180, 255, 0.4) 50%, 
-                  rgba(120, 40, 200, 0.3) 75%, 
-                  rgba(0, 220, 255, 0.4) 100%
-                )
-              `,
-            }}
+            style={pixelTextureStyle}
           />
 
           {/* Content */}
