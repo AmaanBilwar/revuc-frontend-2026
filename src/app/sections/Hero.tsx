@@ -152,15 +152,15 @@ export default function HeroSection() {
       </div>
 
       {/* Content */}
-      <div className="w-full max-w-6xl mx-auto relative pointer-events-none pt-12 sm:pt-20 lg:pt-25 z-40">
-        <div className="max-w-2xl">
-          <h1 className="underline text-[#151477] underline-offset-4 decoration-[#19E363] text-4xl sm:text-6xl lg:text-8xl font-semibold">
+      <div className="w-full max-w-6xl mx-auto relative pointer-events-none pb-8 sm:pb-14 lg:pb-16 z-40">
+        <div className="max-w-2xl mx-auto sm:mx-0">
+          <h1 className="underline text-[#151477] underline-offset-4 decoration-[#19E363] text-4xl sm:text-6xl lg:text-8xl font-semibold text-center sm:text-left">
             Revolution UC
           </h1>
-          <p className="py-2 sm:py-3 text-xl sm:text-2xl lg:text-3xl text-[#151477] font-medium italic">
+          <p className="py-2 sm:py-3 text-xl sm:text-2xl lg:text-3xl text-[#151477] font-medium italic text-center sm:text-left">
             March 28 - 29, 2026
           </p>
-          <p className="py-1 sm:py-2 text-xl sm:text-2xl lg:text-3xl text-[#228CF6]">Build. Learn. Grow.</p>
+          <p className="py-1 sm:py-2 text-xl sm:text-2xl lg:text-3xl text-[#228CF6] text-center sm:text-left">Build. Learn. Grow.</p>
         </div>
       </div>
     </div>
