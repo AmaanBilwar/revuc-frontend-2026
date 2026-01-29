@@ -5,10 +5,8 @@ import Image from "next/image";
 
 export default function About() {
   return (
-    // Changed h-screen to min-h-screen and removed overflow-hidden for mobile accessibility
     <div id="about" className="section w-full min-h-screen relative overflow-x-hidden py-20 lg:py-0 lg:h-screen">
       
-      {/* Background clouds - reduced opacity and size on mobile to prevent clutter */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-[2vh] right-[10vw] w-[40vw] max-w-[200px] aspect-square opacity-40 lg:opacity-70 lg:right-[75vw] lg:w-[20vw]" data-speed="0.9">
           <Image src="/cloud_final4.webp" alt="" fill className="object-contain" />
@@ -18,7 +16,6 @@ export default function About() {
         </div>
       </div>
 
-      {/* Plane - Shifted higher and smaller on mobile */}
       <div className="absolute left-[-10%] top-[5%] w-[70vw] sm:w-[50vw] lg:top-[50%] lg:left-0 lg:-translate-y-1/2 lg:w-[40vw] max-w-[750px] z-10 opacity-80 lg:opacity-100">
         <Image
           src="/landing-plane.webp"
@@ -29,7 +26,6 @@ export default function About() {
         />
       </div>
 
-      {/* Panda - Pushed further down and smaller to avoid overlapping text */}
       <div className="absolute right-[-2vw] bottom-[18vh] w-[70vw] sm:w-[50vw] md:w-[40vw] lg:right-[5vw] lg:bottom-[18vh] lg:w-[32vw] max-w-[700px] z-10">
         <Image
           src="/waving-panda.webp"
@@ -42,10 +38,10 @@ export default function About() {
 
 
       {/* Ground */}
-      <div
+      {/*<div
         className="absolute bottom-[14vh] left-0 right-0 h-[18%] lg:bottom-[18vh] lg:h-[23%] bg-linear-to-b from-[#228cf6]/80 to-[#edf6ff] opacity-40"
         style={{ clipPath: "ellipse(100% 100% at 50% 100%)" }}
-      />
+      />*/}
 
 
       {/* Content */}
