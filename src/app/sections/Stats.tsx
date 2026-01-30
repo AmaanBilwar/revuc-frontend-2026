@@ -4,9 +4,9 @@ export default function Stats() {
   return (
     <section id="stats" className="section relative w-full overflow-hidden">
       <div className="relative w-full h-auto sm:h-[1250px] md:h-[1400px]">
-        {/* MOBILE – rearranged: 60+ right, 870+ left, much closer */}
+        {/* MOBILE – rearranged: 24 left, 60 right, 870 left, 300 right */}
         <div className="sm:hidden flex flex-col items-center gap-0 py-0 relative">
-          <div className="w-full px-0 max-w-xl z-10 -mb-16">
+          <div className="w-full px-0 max-w-xl z-10 -mb-16 transform -translate-x-38">
             <Image
               src="/24_hours_grain.webp"
               alt="24 hours"
@@ -18,7 +18,7 @@ export default function Stats() {
             />
           </div>
 
-          <div className="w-full px-0 max-w-xl -mt-80 transform translate-x-10 z-40">
+          <div className="w-full px-0 max-w-xl -mt-60 transform translate-x-28 z-40">
             <Image
               src="/60+_grain.webp"
               alt="60+ projects"
@@ -29,18 +29,18 @@ export default function Stats() {
             />
           </div>
 
-          <div className="w-full px-0 max-w-2xl -mt-100 transform -translate-x-6 z-30">
+          <div className="w-full px-0 max-w-[1200px] -mt-85 transform -translate-x-32 z-30">
             <Image
               src="/870+_grain.webp"
               alt="870+ registrants"
-              width={1500}
-              height={1000}
-              className="w-full h-auto"
-              sizes="(max-width: 640px) 100vw, 980px"
+              width={1200}
+              height={800}
+              className="w-full h-auto scale-105"
+              sizes="(max-width: 640px) 100vw, 1200px"
             />
           </div>
 
-          <div className="w-full px-0 max-w-xl -mt-100 transform translate-x-6 z-40">
+          <div className="w-full px-0 max-w-xl -mt-85 transform translate-x-24 z-40">
             <Image
               src="/300+_grain.webp"
               alt="300+ participants"
