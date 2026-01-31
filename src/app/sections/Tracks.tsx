@@ -39,8 +39,7 @@ export default function Tracks() {
         alt=""
         width={800}
         height={800}
-        className="absolute top-[15%] right-[-5%] rotate-20"
-        // style={{ width: "auto", height: "auto" }}
+        className="absolute top-[15%] right-[-5%] rotate-20 w-[250px] sm:w-[400px] lg:w-[600px] h-auto"
         aria-hidden="true"
         data-speed="0.9"
       />
@@ -49,8 +48,7 @@ export default function Tracks() {
         alt=""
         width={700}
         height={700}
-        className="absolute top-[15%] right-[-10%] scale-x-[-1]"
-        // style={{ width: "auto", height: "auto" }}
+        className="absolute top-[15%] right-[-10%] scale-x-[-1] w-[200px] sm:w-[350px] lg:w-[500px] h-auto"
         aria-hidden="true"
         data-speed="1.1"
       />
@@ -59,8 +57,7 @@ export default function Tracks() {
         alt=""
         width={700}
         height={700}
-        className="absolute top-[30%] right-[-15%] scale-x-[-1]"
-        // style={{ width: "auto", height: "auto" }}
+        className="absolute top-[30%] right-[-15%] scale-x-[-1] w-[200px] sm:w-[350px] lg:w-[500px] h-auto"
         aria-hidden="true"
         data-speed="1.1"
       />
@@ -69,8 +66,7 @@ export default function Tracks() {
         alt=""
         width={900}
         height={900}
-        className="absolute bottom-[-30%] left-[-26%] rotate-[-20deg]"
-        // style={{ width: "auto", height: "auto" }}
+        className="absolute bottom-[-30%] left-[-26%] rotate-[-20deg] w-[300px] sm:w-[500px] lg:w-[700px] h-auto sm:"
         aria-hidden="true"
         data-speed="0.8"
       />
@@ -80,8 +76,7 @@ export default function Tracks() {
         alt=""
         width={700}
         height={700}
-        className="absolute bottom-[-5%] left-[-10%] rotate-12"
-        // style={{ width: "auto", height: "auto" }}
+        className="absolute bottom-[-5%] left-[-10%] rotate-12 w-[200px] sm:w-[350px] lg:w-[500px] h-auto"
         aria-hidden="true"
         data-speed="0.75"
       />
@@ -91,8 +86,7 @@ export default function Tracks() {
         alt=""
         width={280}
         height={280}
-        className="absolute bottom-[-7%] left-[16%] rotate-15"
-        // style={{ width: "auto", height: "auto" }}
+        className="absolute bottom-[-7%] left-[16%] rotate-15 w-[100px] sm:w-[180px] lg:w-[280px] h-auto"
         aria-hidden="true"
         data-speed="0.9"
       />
@@ -116,15 +110,15 @@ export default function Tracks() {
         </div>
 
         {/* Track cards */}
-        <div className="space-y-6 max-w-7xl mx-auto">
+        <div className="space-y-4 sm:space-y-6 max-w-7xl mx-auto">
           {/* First row */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 max-w-4xl">
             {trackData.slice(0, 2).map((track, index) => (
               <div
                 key={index}
-                className="bg-white p-6 shadow-sm hover:shadow-md transition-shadow duration-300 group"
+                className="bg-white p-4 sm:p-6 shadow-sm hover:shadow-md transition-shadow duration-300 group"
               >
-                <h3 className="text-2xl font-bold text-[#151477] mb-3 relative inline-block">
+                <h3 className="text-xl sm:text-2xl font-bold text-[#151477] mb-2 sm:mb-3 relative inline-block">
                   {track.title}
                   <span className="absolute bottom-0 left-0 w-0 h-1 bg-[#19E363] transition-all duration-300 group-hover:w-full" />
                 </h3>
@@ -134,13 +128,13 @@ export default function Tracks() {
           </div>
 
           {/* Second row */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 max-w-4xl mx-auto">
             {trackData.slice(2, 4).map((track, index) => (
               <div
                 key={index + 2}
-                className="bg-white p-6 shadow-sm hover:shadow-md transition-shadow duration-300 group"
+                className="bg-white p-4 sm:p-6 shadow-sm hover:shadow-md transition-shadow duration-300 group"
               >
-                <h3 className="text-2xl font-bold text-[#151477] mb-3 relative inline-block">
+                <h3 className="text-xl sm:text-2xl font-bold text-[#151477] mb-2 sm:mb-3 relative inline-block">
                   {track.title}
                   <span className="absolute bottom-0 left-0 w-0 h-1 bg-[#19E363] transition-all duration-300 group-hover:w-full" />
                 </h3>
@@ -150,13 +144,13 @@ export default function Tracks() {
           </div>
 
           {/* Third row */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl ml-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 max-w-4xl sm:ml-auto">
             {trackData.slice(4, 6).map((track, index) => (
               <div
                 key={index + 4}
-                className="bg-white p-6 shadow-sm hover:shadow-md transition-shadow duration-300 group"
+                className="bg-white p-4 sm:p-6 shadow-sm hover:shadow-md transition-shadow duration-300 group"
               >
-                <h3 className="text-2xl font-bold text-[#151477] mb-3 relative inline-block">
+                <h3 className="text-xl sm:text-2xl font-bold text-[#151477] mb-2 sm:mb-3 relative inline-block">
                   {track.title}
                   <span className="absolute bottom-0 left-0 w-0 h-1 bg-[#19E363] transition-all duration-300 group-hover:w-full" />
                 </h3>
