@@ -1,20 +1,11 @@
 "use client";
-import { useEffect, useState } from "react";
-import Image from "next/image";
-import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import gsap from "gsap";
-import { useRouter, usePathname } from "next/navigation";
-import { useGsapRouteCleanup } from "@/app/components/gsap-route-cleanup";
-import { authClient } from "@/lib/auth-client";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { Menu, X } from "lucide-react";
-
-import { useIsMobile } from "@/hooks/use-mobile";
-import {
-  NavigationMenu,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-} from "@/components/ui/navigation-menu";
+import Image from "next/image";
+import { usePathname, useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
+import { useGsapRouteCleanup } from "@/app/components/gsap-route-cleanup";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -23,6 +14,14 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import {
+  NavigationMenu,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+} from "@/components/ui/navigation-menu";
+import { useIsMobile } from "@/hooks/use-mobile";
+import { authClient } from "@/lib/auth-client";
 
 gsap.registerPlugin(ScrollToPlugin);
 
@@ -97,16 +96,31 @@ export function NavigationBar() {
   };
   return (
     <nav className="fixed top-0 left-0 right-0 z-100 bg-transparent pointer-events-auto">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-3">
-        <div className="flex items-center justify-between gap-4 relative">
+      {/* MLH Trust Badge */}
+      <a
+        id="mlh-trust-badge"
+        className="block fixed top-0 left-6 sm:left-6 lg:left-[50px] w-[10%] max-w-[100px] min-w-[60px] z-[10000]"
+        href="https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2026-season&utm_content=white"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img
+          src="https://s3.amazonaws.com/logged-assets/trust-badge/2026/mlh-trust-badge-2026-white.svg"
+          alt="Major League Hacking 2026 Hackathon Season"
+          className="w-full"
+        />
+      </a>
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-5 pr-6">
+        <div className="flex items-center justify-between gap-4">
           {/* Left: Logo */}
           <button
             type="button"
             onClick={() => scrollToSection("hero")}
-            className="flex items-center gap-3 cursor-pointer focus:outline-none"
+            className="flex items-center gap-3 cursor-pointer focus:outline-none pl-4"
             aria-label="Go to top of page"
           >
-            <div className="relative h-10 w-10 sm:h-12 sm:w-12">
+            <div className="hidden sm:flex relative h-10 w-10 sm:h-12 sm:w-12">
               <Image
                 src="/revuc_2026_final_logo.png"
                 alt="RevolutionUC 2026 logo"
