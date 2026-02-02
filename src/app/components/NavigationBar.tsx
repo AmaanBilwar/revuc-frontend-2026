@@ -99,7 +99,7 @@ export function NavigationBar() {
       {/* MLH Trust Badge */}
       <a
         id="mlh-trust-badge"
-        className="block fixed top-0 right-4 sm:right-8 lg:right-[50px] w-[10%] max-w-[100px] min-w-[60px] z-[10000]"
+        className="block fixed top-0 left-6 sm:left-6 lg:left-[50px] w-[10%] max-w-[100px] min-w-[60px] z-[10000]"
         href="https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2026-season&utm_content=white"
         target="_blank"
         rel="noopener noreferrer"
@@ -111,16 +111,16 @@ export function NavigationBar() {
         />
       </a>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 pr-10 sm:pr-12 lg:pr-16 py-3">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-5 pr-6">
         <div className="flex items-center justify-between gap-4">
           {/* Left: Logo */}
           <button
             type="button"
             onClick={() => scrollToSection("hero")}
-            className="flex items-center gap-3 cursor-pointer focus:outline-none"
+            className="flex items-center gap-3 cursor-pointer focus:outline-none pl-4"
             aria-label="Go to top of page"
           >
-            <div className="relative h-10 w-10 sm:h-12 sm:w-12">
+            <div className="hidden sm:flex relative h-10 w-10 sm:h-12 sm:w-12">
               <Image
                 src="/revuc_2026_final_logo.png"
                 alt="RevolutionUC 2026 logo"
