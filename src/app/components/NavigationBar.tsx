@@ -89,7 +89,7 @@ export function NavigationBar() {
     scrollToSection(sectionId);
   };
 
-  const handleMobileNavigate = (path: string) => {
+  const _handleMobileNavigate = (path: string) => {
     setMobileOpen(false);
     gsapCleanup?.killBeforeNavigate();
     router.push(path);
@@ -330,13 +330,13 @@ export function NavigationBar() {
                 >
                   [FAQ]
                 </button>
-                <button
+                {/*<button
                   type="button"
                   className="flex w-full items-center justify-start rounded-none border border-white/20 bg-[#151477] text-white font-mono text-sm hover:bg-white hover:text-black"
                   onClick={() => handleMobileNavigate("/schedule")}
                 >
                   [SCHEDULE]
-                </button>
+                </button>*/}
 
                 {isPending ? (
                   <div className="h-10 w-24 bg-white/20 animate-pulse rounded" />
